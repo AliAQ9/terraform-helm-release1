@@ -5,3 +5,9 @@ resource "helm_release" "this" {
   wait      = var.wait
   values    = var.values
 }
+
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
