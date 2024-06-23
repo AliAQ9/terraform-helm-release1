@@ -25,5 +25,15 @@ variable "wait" {
 variable "values" {
   description = "The values of the app"
   type        = list(string)
-  default = []
+  default = [<<EOF
+  
+    replicaCount: 3
+
+image:
+  repository: wordpress
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+  EOF
+  ]
 }

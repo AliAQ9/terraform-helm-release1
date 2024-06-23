@@ -3,8 +3,22 @@
 ### Please use the following code:
 
 ```
-module "release1" {
-  source  = "AliAQ9/release1/helm"
-  version = "latest"
+module "app1" {
+  source    = "AliAQ9/release1/helm"
+  namespace = "default"
+  name      = "wordpress"
+  wait      = false
+  chart     = "./application"
+  values = [<<EOF
+  
+    replicaCount: 3
+
+image:
+  repository: wordpress
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+  EOF
+  ]
 }
 ```
