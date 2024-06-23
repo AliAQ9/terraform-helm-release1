@@ -4,7 +4,7 @@
 
 ```
 module "app1" {
-  source    = "AliAQ9/release/helm"
+  source    = "AliAQ9/release1/helm"
   namespace = "default"
   name      = "wordpress"
   wait      = false
