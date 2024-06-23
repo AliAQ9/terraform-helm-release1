@@ -9,16 +9,6 @@ module "app1" {
   name      = "wordpress"
   wait      = false
   chart     = "./application"
-  values = [<<EOF
-  
-    replicaCount: 3
-
-image:
-  repository: wordpress
-  pullPolicy: IfNotPresent
-  tag: "latest"
-
-  EOF
-  ]
+  values = []
 }
 ```
